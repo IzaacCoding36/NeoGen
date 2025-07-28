@@ -4,8 +4,9 @@
 
 :root {
     --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 214, 219, 220;
-    --background-end-rgb: 255, 255, 255;
+    /* Alterado para o novo tom de verde claro */
+    --background-start-rgb: 180, 245, 185;
+    --background-end-rgb: 189, 255, 194;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -24,11 +25,12 @@
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
+        /* --- Cores de Fundo Alteradas --- */
+        --background: 125 100% 87%; /* #bdffc2 */
         --foreground: 240 10% 3.9%;
-        --card: 0 0% 100%;
+        --card: 125 100% 87%; /* #bdffc2 */
         --card-foreground: 240 10% 3.9%;
-        --popover: 0 0% 100%;
+        --popover: 125 100% 87%; /* #bdffc2 */
         --popover-foreground: 240 10% 3.9%;
         /* --- Verde Limão --- */
         --primary: 74 98% 50%;
@@ -52,7 +54,8 @@
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
-        --sidebar-background: 0 0% 98%;
+        /* --- Fundo da Sidebar Alterado --- */
+        --sidebar-background: 125 80% 92%; /* Tom mais claro do novo verde */
         --sidebar-foreground: 240 5.3% 26.1%;
         /* --- Verde Limão --- */
         --sidebar-primary: 74 98% 50%;

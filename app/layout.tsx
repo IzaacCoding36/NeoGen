@@ -10,7 +10,7 @@ import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://chat.vercel.ai'),
-  title: 'Chatbot de Next.js',
+  title: 'NeoGen AI',
   description: 'Next.js chatbot criado usando o AI SDK.',
 };
 
