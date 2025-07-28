@@ -4,9 +4,9 @@
 
 :root {
     --foreground-rgb: 0, 0, 0;
-    /* Alterado para o novo tom de verde claro */
-    --background-start-rgb: 180, 245, 185;
-    --background-end-rgb: 189, 255, 194;
+    /* Alterado para um tom de verde ainda mais claro e suave */
+    --background-start-rgb: 220, 240, 218;
+    --background-end-rgb: 228, 248, 226;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,12 +25,12 @@
 
 @layer base {
     :root {
-        /* --- Cores de Fundo Alteradas --- */
-        --background: 125 100% 87%; /* #bdffc2 */
+        /* --- Cores de Fundo Alteradas (Mais Claras e Suaves) --- */
+        --background: 125 60% 93%; /* Tom pastel de verde */
         --foreground: 240 10% 3.9%;
-        --card: 125 100% 87%; /* #bdffc2 */
+        --card: 125 60% 93%; /* Tom pastel de verde */
         --card-foreground: 240 10% 3.9%;
-        --popover: 125 100% 87%; /* #bdffc2 */
+        --popover: 125 60% 93%; /* Tom pastel de verde */
         --popover-foreground: 240 10% 3.9%;
         /* --- Verde Limão --- */
         --primary: 74 98% 50%;
@@ -55,7 +55,7 @@
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
         /* --- Fundo da Sidebar Alterado --- */
-        --sidebar-background: 125 80% 92%; /* Tom mais claro do novo verde */
+        --sidebar-background: 125 50% 96%; /* Tom quase branco com leve toque de verde */
         --sidebar-foreground: 240 5.3% 26.1%;
         /* --- Verde Limão --- */
         --sidebar-primary: 74 98% 50%;

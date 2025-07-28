@@ -81,6 +81,7 @@ export default async function RootLayout({
         >
           <Toaster position="top-center" />
           <SessionProvider>{children}</SessionProvider>
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
