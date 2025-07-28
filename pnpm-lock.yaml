@@ -86,9 +86,6 @@ importers:
       ai:
         specifier: 5.0.0-beta.6
         version: 5.0.0-beta.6(zod@3.25.68)
-      esbuild: 
-        specifier: ^0.25.0
-        version: 0.25.0
       bcrypt-ts:
         specifier: ^5.0.2
         version: 5.0.3
@@ -247,9 +244,6 @@ importers:
         specifier: ^18
         version: 18.3.5(@types/react@18.3.18)
       drizzle-kit:
-        specifier: ^0.25.0
-        version: 0.25.0
-      esbuild: 
         specifier: ^0.25.0
         version: 0.25.0
       eslint:
