@@ -4,7 +4,7 @@
 
 :root {
     --foreground-rgb: 0, 0, 0;
-    --background-start-rgb: 0, 255, 0;
+    --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 255, 255;
 }
 
@@ -30,20 +30,23 @@
         --card-foreground: 240 10% 3.9%;
         --popover: 0 0% 100%;
         --popover-foreground: 240 10% 3.9%;
-        --primary: 240 5.9% 10%;
-        --primary-foreground: 0 0% 98%;
+        /* --- Verde Limão --- */
+        --primary: 74 98% 50%;
+        --primary-foreground: 240 10% 3.9%;
         --secondary: 240 4.8% 95.9%;
         --secondary-foreground: 240 5.9% 10%;
         --muted: 240 4.8% 95.9%;
         --muted-foreground: 240 3.8% 46.1%;
-        --accent: 240 4.8% 95.9%;
-        --accent-foreground: 240 5.9% 10%;
+        /* --- Verde Limão --- */
+        --accent: 74 98% 92%;
+        --accent-foreground: 74 50% 20%;
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 0 0% 98%;
         --border: 240 5.9% 90%;
         --input: 240 5.9% 90%;
-        --ring: 240 10% 3.9%;
-        --chart-1: 12 76% 61%;
+        /* --- Verde Limão --- */
+        --ring: 74 98% 50%;
+        --chart-1: 74 98% 50%;
         --chart-2: 173 58% 39%;
         --chart-3: 197 37% 24%;
         --chart-4: 43 74% 66%;
@@ -51,14 +54,15 @@
         --radius: 0.5rem;
         --sidebar-background: 0 0% 98%;
         --sidebar-foreground: 240 5.3% 26.1%;
-        --sidebar-primary: 240 5.9% 10%;
-        --sidebar-primary-foreground: 0 0% 98%;
-        --sidebar-accent: 240 4.8% 95.9%;
-        --sidebar-accent-foreground: 240 5.9% 10%;
+        /* --- Verde Limão --- */
+        --sidebar-primary: 74 98% 50%;
+        --sidebar-primary-foreground: 240 10% 3.9%;
+        --sidebar-accent: 74 98% 92%;
+        --sidebar-accent-foreground: 74 50% 20%;
         --sidebar-border: 220 13% 91%;
-        --sidebar-ring: 217.2 91.2% 59.8%;
+        /* --- Verde Limão --- */
+        --sidebar-ring: 74 98% 50%;
     }
-
     .dark {
         --background: 240 10% 3.9%;
         --foreground: 0 0% 98%;
@@ -66,32 +70,37 @@
         --card-foreground: 0 0% 98%;
         --popover: 240 10% 3.9%;
         --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 240 5.9% 10%;
+        /* --- Verde Limão --- */
+        --primary: 74 98% 50%;
+        --primary-foreground: 240 10% 3.9%;
         --secondary: 240 3.7% 15.9%;
         --secondary-foreground: 0 0% 98%;
         --muted: 240 3.7% 15.9%;
         --muted-foreground: 240 5% 64.9%;
-        --accent: 240 3.7% 15.9%;
-        --accent-foreground: 0 0% 98%;
+        /* --- Verde Limão --- */
+        --accent: 74 35% 18%;
+        --accent-foreground: 74 90% 90%;
         --destructive: 0 62.8% 30.6%;
         --destructive-foreground: 0 0% 98%;
         --border: 240 3.7% 15.9%;
         --input: 240 3.7% 15.9%;
-        --ring: 240 4.9% 83.9%;
-        --chart-1: 220 70% 50%;
+        /* --- Verde Limão --- */
+        --ring: 74 98% 50%;
+        --chart-1: 74 98% 50%;
         --chart-2: 160 60% 45%;
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
         --sidebar-background: 240 5.9% 10%;
         --sidebar-foreground: 240 4.8% 95.9%;
-        --sidebar-primary: 224.3 76.3% 48%;
-        --sidebar-primary-foreground: 0 0% 100%;
-        --sidebar-accent: 240 3.7% 15.9%;
-        --sidebar-accent-foreground: 240 4.8% 95.9%;
+        /* --- Verde Limão --- */
+        --sidebar-primary: 74 98% 50%;
+        --sidebar-primary-foreground: 240 10% 3.9%;
+        --sidebar-accent: 74 35% 18%;
+        --sidebar-accent-foreground: 74 90% 90%;
         --sidebar-border: 240 3.7% 15.9%;
-        --sidebar-ring: 217.2 91.2% 59.8%;
+        /* --- Verde Limão --- */
+        --sidebar-ring: 74 98% 50%;
     }
 }
 
@@ -133,7 +142,7 @@
     @apply bg-background dark:bg-zinc-800 outline-none selection:bg-zinc-900 !important;
 }
 
-.ͼo.cm-focused>.cm-scroller>.cm-selectionLayer .cm-selectionBackground,
+.ͼo.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground,
 .ͼo.cm-selectionBackground,
 .ͼo.cm-content::selection {
     @apply bg-zinc-200 dark:bg-zinc-900 !important;
@@ -160,6 +169,7 @@
     @apply rounded-l-sm !important;
 }
 
+/* --- Verde Limão --- */
 .suggestion-highlight {
-    @apply bg-blue-200 hover:bg-blue-300 dark:hover:bg-blue-400/50 dark:text-blue-50 dark:bg-blue-500/40;
+    @apply bg-lime-200 hover:bg-lime-300 dark:hover:bg-lime-400/50 dark:text-lime-50 dark:bg-lime-500/40;
 }
