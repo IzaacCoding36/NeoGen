@@ -157,7 +157,7 @@ export function PureMessageActions({
                       { revalidate: false },
                     );
 
-                    return 'Downvoted Desaprovada!';
+                    return 'Resposta Desaprovada!';
                   },
                   error: 'Falha ao desaprovar resposta.',
                 });

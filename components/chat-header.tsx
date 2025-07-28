@@ -34,7 +34,7 @@ function PureChatHeader({
 
   return (
     <header className="flex sticky top-0 bg-background py-1.5 items-center px-2 md:px-2 gap-2">
-      <SidebarToggle />
+      <Sidebar/>
 
       {(!open || windowWidth < 768) && (
         <Tooltip>
@@ -48,10 +48,10 @@ function PureChatHeader({
               }}
             >
               <PlusIcon />
-              <span className="md:sr-only">New Chat</span>
+              <span className="md:sr-only">Nova Conversa</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>New Chat</TooltipContent>
+          <TooltipContent>Nova Conversa</TooltipContent>
         </Tooltip>
       )}
 
