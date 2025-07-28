@@ -48,10 +48,10 @@ function PureChatHeader({
               }}
             >
               <PlusIcon />
-              <span className="md:sr-only">Nova Conversa</span>
+              <span className="md:sr-only">New Chat</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Nova Conversa</TooltipContent>
+          <TooltipContent>New Chat</TooltipContent>
         </Tooltip>
       )}
 
@@ -70,6 +70,8 @@ function PureChatHeader({
           className="order-1 md:order-3"
         />
       )}
+      
+    </header>
   );
 }
 
