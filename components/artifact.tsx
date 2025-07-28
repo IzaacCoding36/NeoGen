@@ -238,7 +238,7 @@ function PureArtifact({
   );
 
   if (!artifactDefinition) {
-    throw new Error('Artifact definition not found!');
+    throw new Error('Definição de artefato não encontrado!');
   }
 
   useEffect(() => {

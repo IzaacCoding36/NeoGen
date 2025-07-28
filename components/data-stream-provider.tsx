@@ -34,7 +34,7 @@ export function DataStreamProvider({
 export function useDataStream() {
   const context = useContext(DataStreamContext);
   if (!context) {
-    throw new Error('useDataStream must be used within a DataStreamProvider');
+    throw new Error('useDataStream deve ser usado dentro de DataStreamProvider');
   }
   return context;
 }
