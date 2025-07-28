@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   if (!chatId) {
     return new ChatSDKError(
       'bad_request:api',
-      'Parameter chatId is required.',
+      'Parâmetro chatId é obrigatório.',
     ).toResponse();
   }
 
@@ -45,7 +45,7 @@ export async function PATCH(request: Request) {
   if (!chatId || !messageId || !type) {
     return new ChatSDKError(
       'bad_request:api',
-      'Parameters chatId, messageId, and type are required.',
+      'Parâmetros chatId, messageId, e type são obrigatórios.',
     ).toResponse();
   }
 
@@ -71,5 +71,5 @@ export async function PATCH(request: Request) {
     type: type,
   });
 
-  return new Response('Message voted', { status: 200 });
+  return new Response('Mensagem votada', { status: 200 });
 }

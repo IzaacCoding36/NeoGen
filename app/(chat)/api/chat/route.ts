@@ -51,7 +51,7 @@ export function getStreamContext() {
     } catch (error: any) {
       if (error.message.includes('REDIS_URL')) {
         console.log(
-          ' > Resumable streams are disabled due to missing REDIS_URL',
+          ' > Os fluxos retomáveis estão desabilitados devido à ausência de REDIS_URL',
         );
       } else {
         console.error(error);
@@ -203,7 +203,7 @@ export async function POST(request: Request) {
         });
       },
       onError: () => {
-        return 'Oops, an error occurred!';
+        return 'Ops! Houve um erro';
       },
     });
 

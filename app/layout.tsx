@@ -6,10 +6,12 @@ import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
 import { SessionProvider } from 'next-auth/react';
 
+import { Analytics } from "@vercel/analytics/next"
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://chat.vercel.ai'),
-  title: 'Next.js Chatbot Template',
-  description: 'Next.js chatbot template using the AI SDK.',
+  title: 'Chatbot de Next.js',
+  description: 'Next.js chatbot criado usando o AI SDK.',
 };
 
 export const viewport = {

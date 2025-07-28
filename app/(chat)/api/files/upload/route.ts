@@ -9,11 +9,11 @@ const FileSchema = z.object({
   file: z
     .instanceof(Blob)
     .refine((file) => file.size <= 5 * 1024 * 1024, {
-      message: 'File size should be less than 5MB',
+      message: 'O tamanho do arquivo deve ser menor que 5MB',
     })
     // Update the file type based on the kind of files you want to accept
     .refine((file) => ['image/jpeg', 'image/png'].includes(file.type), {
-      message: 'File type should be JPEG or PNG',
+      message: 'O tipo do arquivo deve ser JPEG ou PNG',
     }),
 });
 
@@ -21,11 +21,11 @@ export async function POST(request: Request) {
   const session = await auth();
 
   if (!session) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    return NextResponse.json({ error: 'Não Autorizado' }, { status: 401 });
   }
 
   if (request.body === null) {
-    return new Response('Request body is empty', { status: 400 });
+    return new Response('O campo solicitação está vazio', { status: 400 });
   }
 
   try {
@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     const file = formData.get('file') as Blob;
 
     if (!file) {
-      return NextResponse.json({ error: 'No file uploaded' }, { status: 400 });
+      return NextResponse.json({ error: 'Nenhum arquivo foi enviado' }, { status: 400 });
     }
 
     const validatedFile = FileSchema.safeParse({ file });
@@ -57,11 +57,11 @@ export async function POST(request: Request) {
 
       return NextResponse.json(data);
     } catch (error) {
-      return NextResponse.json({ error: 'Upload failed' }, { status: 500 });
+      return NextResponse.json({ error: 'Falha no envio' }, { status: 500 });
     }
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to process request' },
+      { error: 'Falha ao processar pedido' },
       { status: 500 },
     );
   }

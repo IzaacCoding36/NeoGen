@@ -14,7 +14,7 @@ export async function GET(request: Request) {
   if (!id) {
     return new ChatSDKError(
       'bad_request:api',
-      'Parameter id is missing',
+      'Parâmetro id está faltando',
     ).toResponse();
   }
 
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
   if (!id) {
     return new ChatSDKError(
       'bad_request:api',
-      'Parameter id is required.',
+      'Parâmetro id é obrigatório.',
     ).toResponse();
   }
 
@@ -92,14 +92,14 @@ export async function DELETE(request: Request) {
   if (!id) {
     return new ChatSDKError(
       'bad_request:api',
-      'Parameter id is required.',
+      'O parâmetro id é obrigatório.',
     ).toResponse();
   }
 
   if (!timestamp) {
     return new ChatSDKError(
       'bad_request:api',
-      'Parameter timestamp is required.',
+      'O parâmetro timestamp é obrigatório.',
     ).toResponse();
   }
 

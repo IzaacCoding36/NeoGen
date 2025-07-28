@@ -69,7 +69,7 @@ interface Metadata {
 export const codeArtifact = new Artifact<'code', Metadata>({
   kind: 'code',
   description:
-    'Useful for code generation; Code execution is only available for python code.',
+    'Útil para geração de códigos; Execução de códigos só estão disponíveis para Python.',
   initialize: async ({ setMetadata }) => {
     setMetadata({
       outputs: [],
@@ -114,8 +114,8 @@ export const codeArtifact = new Artifact<'code', Metadata>({
   actions: [
     {
       icon: <PlayIcon size={18} />,
-      label: 'Run',
-      description: 'Execute code',
+      label: 'Executar',
+      description: 'Executar código',
       onClick: async ({ content, setMetadata }) => {
         const runId = generateUUID();
         const outputContent: Array<ConsoleOutputContent> = [];
@@ -210,7 +210,7 @@ export const codeArtifact = new Artifact<'code', Metadata>({
     },
     {
       icon: <UndoIcon size={18} />,
-      description: 'View Previous version',
+      description: 'Ver versão anterior',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('prev');
       },
@@ -224,7 +224,7 @@ export const codeArtifact = new Artifact<'code', Metadata>({
     },
     {
       icon: <RedoIcon size={18} />,
-      description: 'View Next version',
+      description: 'Ver próxima versão',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('next');
       },
@@ -238,10 +238,10 @@ export const codeArtifact = new Artifact<'code', Metadata>({
     },
     {
       icon: <CopyIcon size={18} />,
-      description: 'Copy code to clipboard',
+      description: 'Copiar código para a área de trabalho',
       onClick: ({ content }) => {
         navigator.clipboard.writeText(content);
-        toast.success('Copied to clipboard!');
+        toast.success('Copiado com sucesso!');
       },
     },
   ],
@@ -255,7 +255,7 @@ export const codeArtifact = new Artifact<'code', Metadata>({
           parts: [
             {
               type: 'text',
-              text: 'Add comments to the code snippet for understanding',
+              text: 'Adicione comentários ao trecho de código para compreensão',
             },
           ],
         });
@@ -270,7 +270,7 @@ export const codeArtifact = new Artifact<'code', Metadata>({
           parts: [
             {
               type: 'text',
-              text: 'Add logs to the code snippet for debugging',
+              text: 'Adicione logs ao snippet de código para depuração',
             },
           ],
         });
