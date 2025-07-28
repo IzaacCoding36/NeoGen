@@ -34,7 +34,7 @@ export function AppSidebar({ user }: { user: User | undefined }) {
               }}
               className="flex flex-row gap-3 items-center"
             >
-              <span className="text-lg font-semibold px-2 hover:bg-muted rounded-md cursor-pointer" style="color:lime; text-shadow:0px 0px 5px white">
+              <span className="text-lg font-semibold px-2 hover:bg-muted rounded-md cursor-pointer">
                 NeoGen
               </span>
             </Link>
