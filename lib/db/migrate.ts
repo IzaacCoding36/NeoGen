@@ -9,7 +9,7 @@ config({
 
 const runMigrate = async () => {
   if (!process.env.POSTGRES_URL) {
-    throw new Error('POSTGRES_URL is not defined');
+    throw new Error('POSTGRES_URL não está definido');
   }
 
   const connection = postgres(process.env.POSTGRES_URL, { max: 1 });
@@ -21,12 +21,12 @@ const runMigrate = async () => {
   await migrate(db, { migrationsFolder: './lib/db/migrations' });
   const end = Date.now();
 
-  console.log('✅ Migrations completed in', end - start, 'ms');
+  console.log('✅ Migrações completas em:', end - start, 'ms');
   process.exit(0);
 };
 
 runMigrate().catch((err) => {
-  console.error('❌ Migration failed');
+  console.error('❌ Erro de migração');
   console.error(err);
   process.exit(1);
 });

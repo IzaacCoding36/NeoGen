@@ -12,7 +12,7 @@ interface UpdateDocumentProps {
 
 export const updateDocument = ({ session, dataStream }: UpdateDocumentProps) =>
   tool({
-    description: 'Update a document with the given description.',
+    description: 'Atualize um documento com a descrição dada.',
     inputSchema: z.object({
       id: z.string().describe('The ID of the document to update'),
       description: z
@@ -24,7 +24,7 @@ export const updateDocument = ({ session, dataStream }: UpdateDocumentProps) =>
 
       if (!document) {
         return {
-          error: 'Document not found',
+          error: 'Documento não encontrado',
         };
       }
 
@@ -40,7 +40,7 @@ export const updateDocument = ({ session, dataStream }: UpdateDocumentProps) =>
       );
 
       if (!documentHandler) {
-        throw new Error(`No document handler found for kind: ${document.kind}`);
+        throw new Error(`Nenhum manipulador de documentos encontrado para o tipo: ${document.kind}`);
       }
 
       await documentHandler.onUpdateDocument({
@@ -56,7 +56,7 @@ export const updateDocument = ({ session, dataStream }: UpdateDocumentProps) =>
         id,
         title: document.title,
         kind: document.kind,
-        content: 'The document has been updated successfully.',
+        content: 'O documento foi atualizado com sucesso.',
       };
     },
   });

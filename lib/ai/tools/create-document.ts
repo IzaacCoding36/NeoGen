@@ -16,7 +16,7 @@ interface CreateDocumentProps {
 export const createDocument = ({ session, dataStream }: CreateDocumentProps) =>
   tool({
     description:
-      'Create a document for a writing or content creation activities. This tool will call other functions that will generate the contents of the document based on the title and kind.',
+      'Crie um documento para for a escrita ou atividades de criação de conteúdo. Essa ferramenta irá chamar outras funções que vão gerar o conteúdo do documento baseado no seu tipo e seu título.',
     inputSchema: z.object({
       title: z.string(),
       kind: z.enum(artifactKinds),
@@ -54,7 +54,7 @@ export const createDocument = ({ session, dataStream }: CreateDocumentProps) =>
       );
 
       if (!documentHandler) {
-        throw new Error(`No document handler found for kind: ${kind}`);
+        throw new Error(`Nenhum manipulador de documentos encontrado para o tipo: ${kind}`);
       }
 
       await documentHandler.onCreateDocument({
@@ -70,7 +70,7 @@ export const createDocument = ({ session, dataStream }: CreateDocumentProps) =>
         id,
         title,
         kind,
-        content: 'A document was created and is now visible to the user.',
+        content: 'Um documento foi criado e agora está disponível para o usuário.',
       };
     },
   });

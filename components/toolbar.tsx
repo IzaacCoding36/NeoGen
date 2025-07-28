@@ -218,7 +218,7 @@ const ReadingLevelSelector = ({
                     parts: [
                       {
                         type: 'text',
-                        text: `Please adjust the reading level to ${LEVELS[currentLevel]} level.`,
+                        text: `Por favor ajuste o nível de leitura para o nível ${LEVELS[currentLevel]}.`,
                       },
                     ],
                   });
@@ -364,7 +364,7 @@ const PureToolbar = ({
   );
 
   if (!artifactDefinition) {
-    throw new Error('Artifact definition not found!');
+    throw new Error('Definição de artefato não encontrado!');
   }
 
   const toolsByArtifactKind = artifactDefinition.toolbar;

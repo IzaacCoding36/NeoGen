@@ -17,7 +17,7 @@ export const requestSuggestions = ({
   dataStream,
 }: RequestSuggestionsProps) =>
   tool({
-    description: 'Request suggestions for a document',
+    description: 'Pedir sugestões para documentos',
     inputSchema: z.object({
       documentId: z
         .string()
@@ -28,7 +28,7 @@ export const requestSuggestions = ({
 
       if (!document || !document.content) {
         return {
-          error: 'Document not found',
+          error: 'Documento não encontrado',
         };
       }
 
@@ -86,7 +86,7 @@ export const requestSuggestions = ({
         id: documentId,
         title: document.title,
         kind: document.kind,
-        message: 'Suggestions have been added to the document',
+        message: 'Sugestões foram adicionadas ao documento',
       };
     },
   });
