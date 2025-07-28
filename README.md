@@ -1,62 +1,40 @@
-<a href="https://chat.vercel.ai/">
-  <img alt="Next.js 14 and App Router-ready AI chatbot." src="app/(chat)/opengraph-image.png">
-  <h1 align="center">Chat SDK</h1>
-</a>
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=500&size=17&pause=1000&color=13F722&background=000000&center=true&vCenter=true&width=1000&height=100&lines=NeoGen;Intelig%C3%AAncia+Artificial;A+Nova+Gera%C3%A7%C3%A3o+na+palma+da+sua+m%C3%A3o)](https://git.io/typing-svg)
 
-<p align="center">
-    Chat SDK is a free, open-source template built with Next.js and the AI SDK that helps you quickly build powerful chatbot applications.
-</p>
+# NeoGen
 
-<p align="center">
-  <a href="https://chat-sdk.dev"><strong>Read Docs</strong></a> ·
-  <a href="#features"><strong>Features</strong></a> ·
-  <a href="#model-providers"><strong>Model Providers</strong></a> ·
-  <a href="#deploy-your-own"><strong>Deploy Your Own</strong></a> ·
-  <a href="#running-locally"><strong>Running locally</strong></a>
-</p>
-<br/>
+**_|| Seja bem-vindo a NeoGen! ||_**
 
-## Features
+***
 
-- [Next.js](https://nextjs.org) App Router
-  - Advanced routing for seamless navigation and performance
-  - React Server Components (RSCs) and Server Actions for server-side rendering and increased performance
-- [AI SDK](https://sdk.vercel.ai/docs)
-  - Unified API for generating text, structured objects, and tool calls with LLMs
-  - Hooks for building dynamic chat and generative user interfaces
-  - Supports xAI (default), OpenAI, Fireworks, and other model providers
-- [shadcn/ui](https://ui.shadcn.com)
-  - Styling with [Tailwind CSS](https://tailwindcss.com)
-  - Component primitives from [Radix UI](https://radix-ui.com) for accessibility and flexibility
-- Data Persistence
-  - [Neon Serverless Postgres](https://vercel.com/marketplace/neon) for saving chat history and user data
-  - [Vercel Blob](https://vercel.com/storage/blob) for efficient file storage
-- [Auth.js](https://authjs.dev)
-  - Simple and secure authentication
+## O que é NeoGen?
 
-## Model Providers
+_NeoGen é o mais novo ambiente de IA criado por **[IzaacCoding36](https://github.com/IzaacCoding36)** para facilitar tarefas diárias e auxiliar com conceitos gerais_
 
-This template ships with [xAI](https://x.ai) `grok-2-1212` as the default chat model. However, with the [AI SDK](https://sdk.vercel.ai/docs), you can switch LLM providers to [OpenAI](https://openai.com), [Anthropic](https://anthropic.com), [Cohere](https://cohere.com/), and [many more](https://sdk.vercel.ai/providers/ai-sdk-providers) with just a few lines of code.
+## Sobre
 
-## Deploy Your Own
+- _NeoGen foi criado com o **[AI SDK](https://v5.ai-sdk.dev/)** a partir do **[Vercel](https://vercel.com/)** (Empresa de serviços em nuvem), juntamente com o framework de desenvolvimento web **[Next.js](https://nextjs.org/)**_
+- _O modelo de IA utilizado neste projeto pertence a xAI, sendo o modelo grok-2-1212_
 
-You can deploy your own version of the Next.js AI Chatbot to Vercel with one click:
+## Recursos
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fai-chatbot&env=AUTH_SECRET&envDescription=Learn+more+about+how+to+get+the+API+Keys+for+the+application&envLink=https%3A%2F%2Fgithub.com%2Fvercel%2Fai-chatbot%2Fblob%2Fmain%2F.env.example&demo-title=AI+Chatbot&demo-description=An+Open-Source+AI+Chatbot+Template+Built+With+Next.js+and+the+AI+SDK+by+Vercel.&demo-url=https%3A%2F%2Fchat.vercel.ai&products=%5B%7B%22type%22%3A%22integration%22%2C%22protocol%22%3A%22ai%22%2C%22productSlug%22%3A%22grok%22%2C%22integrationSlug%22%3A%22xai%22%7D%2C%7B%22type%22%3A%22integration%22%2C%22protocol%22%3A%22storage%22%2C%22productSlug%22%3A%22neon%22%2C%22integrationSlug%22%3A%22neon%22%7D%2C%7B%22type%22%3A%22integration%22%2C%22protocol%22%3A%22storage%22%2C%22productSlug%22%3A%22upstash-kv%22%2C%22integrationSlug%22%3A%22upstash%22%7D%2C%7B%22type%22%3A%22blob%22%7D%5D)
+- **_Next.js App Router_**
+  - _Roteamento avançado para navegação e desempenho perfeitos_
+  - _Componentes de Servidor React (RSCs) e Ações de Servidor para renderização no lado do servidor e melhor desempenho_
+- **_AI SDK_**
+  - _API unificada para geração de texto, objetos estruturados e chamadas de ferramentas com LLMs_
+  - _Hooks para construção de chat dinâmico e interfaces de usuário generativas_
+  - _Suporta xAI (padrão), OpenAI, Fireworks e outros provedores de modelos_
+- **_shadcn/ui_**
+  - _Estilo com Tailwind CSS_
+  - _Primitivas de componentes da Radix UI para acessibilidade e flexibilidade_
+- **_Persistência de Dados_**
+  - _Neon Serverless Postgres para salvar histórico de chat e dados do usuário_
+  - _Vercel Blob para armazenamento eficiente de arquivos_
+- **_Auth.js_**
+  - _Autenticação simples e segura_
 
-## Running locally
+***
 
-You will need to use the environment variables [defined in `.env.example`](.env.example) to run Next.js AI Chatbot. It's recommended you use [Vercel Environment Variables](https://vercel.com/docs/projects/environment-variables) for this, but a `.env` file is all that is necessary.
+**_NeoGen, a nova geração na palma da sua mão_**
 
-> Note: You should not commit your `.env` file or it will expose secrets that will allow others to control access to your various AI and authentication provider accounts.
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Link local instance with Vercel and GitHub accounts (creates `.vercel` directory): `vercel link`
-3. Download your environment variables: `vercel env pull`
-
-```bash
-pnpm install
-pnpm dev
-```
-
-Your app template should now be running on [localhost:3000](http://localhost:3000).
+**_Aproveite para deixar sugestões, dicas, ideias e mais na aba de discussões, e agradeço a sua atenção!_**
