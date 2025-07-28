@@ -21,7 +21,7 @@ function PureSuggestedActions({
   const suggestedActions = [
     {
       title: 'Quais são as vantagens',
-      label: 'de usar Inteligência Artificial?',
+      label: 'de usar IA?',
       action: 'Quais são as vantagens de usar Inteligência Artificial?',
     },
     {
