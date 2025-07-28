@@ -16,6 +16,7 @@ export default function Page() {
 
   const [email, setEmail] = useState('');
   const [isSuccessful, setIsSuccessful] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
 
   const [state, formAction] = useActionState<RegisterActionState, FormData>(
     register,
@@ -30,26 +31,30 @@ export default function Page() {
     if (state.status === 'user_exists') {
       toast({ type: 'error', description: 'Essa conta já existe!' });
       setIsSuccessful(false);
+      setRedirecting(false);
     } else if (state.status === 'failed') {
       toast({ type: 'error', description: 'Falha ao criar conta!' });
       setIsSuccessful(false);
+      setRedirecting(false);
     } else if (state.status === 'invalid_data') {
       toast({
         type: 'error',
         description: 'Falha ao validar sua inscrição!',
       });
       setIsSuccessful(false);
-    } else if (state.status === 'success') {
+      setRedirecting(false);
+    } else if (state.status === 'success' && !redirecting) {
       toast({ type: 'success', description: 'Conta criada com sucesso!' });
       setIsSuccessful(true);
+      setRedirecting(true);
       updateSession();
-    // Redireciona para login ou dashboard após 2 segundos
       setTimeout(() => {
         setIsSuccessful(false);
+        setRedirecting(false);
         router.push('/login');
       }, 2000);
     }
-  }, [state.status, router, updateSession]);
+  }, [state.status, router, updateSession, redirecting]);
 
   const handleSubmit = (formData: FormData) => {
     setEmail(formData.get('email') as string);

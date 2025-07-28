@@ -26,29 +26,33 @@ export default function Page() {
 
   const { update: updateSession } = useSession();
 
-  useEffect(() => {
+  const [redirecting, setRedirecting] = useState(false);
+
+useEffect(() => {
   if (state.status === 'failed') {
     toast({
       type: 'error',
       description: 'Credenciais inválidas!',
     });
     setIsSuccessful(false);
+    setRedirecting(false);
   } else if (state.status === 'invalid_data') {
     toast({
       type: 'error',
       description: 'Falha ao validar sua inscrição!',
     });
     setIsSuccessful(false);
-  } else if (state.status === 'success') {
+    setRedirecting(false);
+  } else if (state.status === 'success' && !redirecting) {
     setIsSuccessful(true);
+    setRedirecting(true);
     updateSession();
-    // Redireciona após 2 segundos
     setTimeout(() => {
       setIsSuccessful(false);
       router.push('/'); // ou '/dashboard'
     }, 2000);
   }
-}, [state.status, router, updateSession]);
+}, [state.status, router, updateSession, redirecting]);
 
   const handleSubmit = (formData: FormData) => {
     setEmail(formData.get('email') as string);
