@@ -238,7 +238,7 @@ export const codeArtifact = new Artifact<'code', Metadata>({
     },
     {
       icon: <CopyIcon size={18} />,
-      description: 'Copiar código para a área de trabalho',
+      description: 'Copiar código para a área de transferência',
       onClick: ({ content }) => {
         navigator.clipboard.writeText(content);
         toast.success('Copiado com sucesso!');

@@ -29,19 +29,25 @@ export default function Page() {
   useEffect(() => {
     if (state.status === 'user_exists') {
       toast({ type: 'error', description: 'Essa conta já existe!' });
+      setIsSuccessful(false);
     } else if (state.status === 'failed') {
       toast({ type: 'error', description: 'Falha ao criar conta!' });
+      setIsSuccessful(false);
     } else if (state.status === 'invalid_data') {
       toast({
         type: 'error',
         description: 'Falha ao validar sua inscrição!',
       });
+      setIsSuccessful(false);
     } else if (state.status === 'success') {
       toast({ type: 'success', description: 'Conta criada com sucesso!' });
-
       setIsSuccessful(true);
       updateSession();
-      router.refresh();
+    // Redireciona para login ou dashboard após 2 segundos
+      setTimeout(() => {
+        setIsSuccessful(false);
+        router.push('/login');
+      }, 2000);
     }
   }, [state.status, router, updateSession]);
 

@@ -27,22 +27,28 @@ export default function Page() {
   const { update: updateSession } = useSession();
 
   useEffect(() => {
-    if (state.status === 'failed') {
-      toast({
-        type: 'error',
-        description: 'Credenciais inválidas!',
-      });
-    } else if (state.status === 'invalid_data') {
-      toast({
-        type: 'error',
-        description: 'Falha ao validar sua inscrição!',
-      });
-    } else if (state.status === 'success') {
-      setIsSuccessful(true);
-      updateSession();
-      router.refresh();
-    }
-  }, [state.status, router, updateSession]);
+  if (state.status === 'failed') {
+    toast({
+      type: 'error',
+      description: 'Credenciais inválidas!',
+    });
+    setIsSuccessful(false);
+  } else if (state.status === 'invalid_data') {
+    toast({
+      type: 'error',
+      description: 'Falha ao validar sua inscrição!',
+    });
+    setIsSuccessful(false);
+  } else if (state.status === 'success') {
+    setIsSuccessful(true);
+    updateSession();
+    // Redireciona após 2 segundos
+    setTimeout(() => {
+      setIsSuccessful(false);
+      router.push('/'); // ou '/dashboard'
+    }, 2000);
+  }
+}, [state.status, router, updateSession]);
 
   const handleSubmit = (formData: FormData) => {
     setEmail(formData.get('email') as string);
