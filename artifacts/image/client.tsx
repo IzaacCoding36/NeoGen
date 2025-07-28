@@ -5,7 +5,7 @@ import { toast } from 'sonner';
 
 export const imageArtifact = new Artifact({
   kind: 'image',
-  description: 'Useful for image generation',
+  description: 'Útil para criação de imagens',
   onStreamPart: ({ streamPart, setArtifact }) => {
     if (streamPart.type === 'data-imageDelta') {
       setArtifact((draftArtifact) => ({
@@ -20,7 +20,7 @@ export const imageArtifact = new Artifact({
   actions: [
     {
       icon: <UndoIcon size={18} />,
-      description: 'View Previous version',
+      description: 'Ver versão anterior',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('prev');
       },
@@ -34,7 +34,7 @@ export const imageArtifact = new Artifact({
     },
     {
       icon: <RedoIcon size={18} />,
-      description: 'View Next version',
+      description: 'Ver próxima versão',
       onClick: ({ handleVersionChange }) => {
         handleVersionChange('next');
       },
@@ -48,7 +48,7 @@ export const imageArtifact = new Artifact({
     },
     {
       icon: <CopyIcon size={18} />,
-      description: 'Copy image to clipboard',
+      description: 'Copiar imagem para a área de transferência',
       onClick: ({ content }) => {
         const img = new Image();
         img.src = `data:image/png;base64,${content}`;
@@ -68,7 +68,7 @@ export const imageArtifact = new Artifact({
           }, 'image/png');
         };
 
-        toast.success('Copied image to clipboard!');
+        toast.success('Imagem copiada com sucesso!');
       },
     },
   ],
