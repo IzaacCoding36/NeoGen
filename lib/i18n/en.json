@@ -1,0 +1,16 @@
+{
+  "user": {
+    "guest": "Guest",
+    "loading": "Loading auth status",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "theme": {
+    "activate": "Activate {{mode}} mode",
+    "dark": "dark",
+    "light": "light"
+  },
+  "auth": {
+    "checking": "Checking authentication status, please try again!"
+  }
+}

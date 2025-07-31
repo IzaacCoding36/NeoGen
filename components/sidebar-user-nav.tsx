@@ -5,6 +5,7 @@ import Image from 'next/image';
 import type { User } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
 import { useTheme } from 'next-themes';
+import { useTranslation } from 'react-i18next';
 
 import {
   DropdownMenu,
@@ -27,6 +28,22 @@ export function SidebarUserNav({ user }: { user: User }) {
   const router = useRouter();
   const { data, status } = useSession();
   const { setTheme, resolvedTheme } = useTheme();
+  const { i18n, t } = useTranslation();
+  const [language, setLanguage] = React.useState(i18n.language || 'pt-BR');
+
+  React.useEffect(() => {
+    const storedLang = localStorage.getItem('language');
+    if (storedLang && storedLang !== i18n.language) {
+      i18n.changeLanguage(storedLang);
+      setLanguage(storedLang);
+    }
+  }, [i18n]);
+
+  const handleLanguageChange = (lang: string) => {
+    setLanguage(lang);
+    i18n.changeLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
 
   const isGuest = guestRegex.test(data?.user?.email ?? '');
 
@@ -40,7 +57,7 @@ export function SidebarUserNav({ user }: { user: User }) {
                 <div className="flex flex-row gap-2">
                   <div className="size-6 bg-zinc-500/30 rounded-full animate-pulse" />
                   <span className="bg-zinc-500/30 text-transparent rounded-md animate-pulse">
-                    Carregando status auth
+                    {t('user.loading')}
                   </span>
                 </div>
                 <div className="animate-spin text-zinc-500">
@@ -60,7 +77,7 @@ export function SidebarUserNav({ user }: { user: User }) {
                   className="rounded-full"
                 />
                 <span data-testid="user-email" className="truncate">
-                  {isGuest ? 'Usuário' : user?.email}
+                  {isGuest ? t('user.guest') : user?.email}
                 </span>
                 <ChevronUp className="ml-auto" />
               </SidebarMenuButton>
@@ -71,12 +88,57 @@ export function SidebarUserNav({ user }: { user: User }) {
             side="top"
             className="w-[--radix-popper-anchor-width]"
           >
+            {/* Seletor de idioma */}
+            <DropdownMenuItem
+              className="flex flex-row gap-2 items-center cursor-pointer select-none"
+              asChild
+            >
+              <div>
+                <button
+                  type="button"
+                  style={{
+                    fontWeight: language === 'pt-BR' ? 'bold' : 'normal',
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    margin: 0,
+                    cursor: 'pointer',
+                  }}
+                  aria-pressed={language === 'pt-BR'}
+                  onClick={() => handleLanguageChange('pt-BR')}
+                >
+                  Português
+                </button>
+                {' | '}
+                <button
+                  type="button"
+                  style={{
+                    fontWeight: language === 'en' ? 'bold' : 'normal',
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    margin: 0,
+                    cursor: 'pointer',
+                  }}
+                  aria-pressed={language === 'en'}
+                  onClick={() => handleLanguageChange('en')}
+                >
+                  English
+                </button>
+              </div>
+            </DropdownMenuItem>
             <DropdownMenuItem
               data-testid="user-nav-item-theme"
               className="cursor-pointer"
-              onSelect={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
+              onSelect={() =>
+                setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+              }
             >
-              {`Ativar modo ${resolvedTheme === 'light' ? 'escuro' : 'claro'}`}
+              {t('theme.activate', {
+                mode: t(
+                  `theme.${resolvedTheme === 'light' ? 'dark' : 'light'}`,
+                ),
+              })}
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem asChild data-testid="user-nav-item-auth">
@@ -87,13 +149,10 @@ export function SidebarUserNav({ user }: { user: User }) {
                   if (status === 'loading') {
                     toast({
                       type: 'error',
-                      description:
-                        'Checando status de autenticação, por favor tente novamente!',
+                      description: t('auth.checking'),
                     });
-
                     return;
                   }
-
                   if (isGuest) {
                     router.push('/login');
                   } else {
@@ -103,7 +162,7 @@ export function SidebarUserNav({ user }: { user: User }) {
                   }
                 }}
               >
-                {isGuest ? 'Fazer login' : 'Sair'}
+                {isGuest ? t('user.login') : t('user.logout')}
               </button>
             </DropdownMenuItem>
           </DropdownMenuContent>
