@@ -13,6 +13,7 @@ import { deleteTrailingMessages } from '@/app/(chat)/actions';
 import type { UseChatHelpers } from '@ai-sdk/react';
 import type { ChatMessage } from '@/lib/types';
 import { getTextFromMessage } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export type MessageEditorProps = {
   message: ChatMessage;
@@ -28,6 +29,7 @@ export function MessageEditor({
   regenerate,
 }: MessageEditorProps) {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const { t } = useLanguage();
 
   const [draftContent, setDraftContent] = useState<string>(
     getTextFromMessage(message),
@@ -70,7 +72,7 @@ export function MessageEditor({
             setMode('view');
           }}
         >
-          Cancel
+          {t('common.cancel')}
         </Button>
         <Button
           data-testid="message-editor-send-button"
@@ -103,7 +105,7 @@ export function MessageEditor({
             regenerate();
           }}
         >
-          {isSubmitting ? 'Sending...' : 'Send'}
+          {isSubmitting ? t('common.loading') : t('common.send')}
         </Button>
       </div>
     </div>

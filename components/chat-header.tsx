@@ -13,6 +13,7 @@ import { memo } from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 import { type VisibilityType, VisibilitySelector } from './visibility-selector';
 import type { Session } from 'next-auth';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 function PureChatHeader({
   chatId,
@@ -29,6 +30,7 @@ function PureChatHeader({
 }) {
   const router = useRouter();
   const { open } = useSidebar();
+  const { t } = useLanguage();
 
   const { width: windowWidth } = useWindowSize();
 
@@ -48,10 +50,10 @@ function PureChatHeader({
               }}
             >
               <PlusIcon />
-              <span className="md:sr-only">Nova Conversa</span>
+              <span className="md:sr-only">{t('nav.new_chat')}</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>Nova Conversa</TooltipContent>
+          <TooltipContent>{t('nav.new_chat')}</TooltipContent>
         </Tooltip>
       )}
 

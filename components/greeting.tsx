@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export const Greeting = () => {
+  const { t } = useLanguage();
+  
   return (
     <div
       key="overview"
@@ -13,7 +16,7 @@ export const Greeting = () => {
         transition={{ delay: 0.5 }}
         className="text-2xl font-semibold"
       >
-        Olá!
+        {t('greeting.hello')}
       </motion.div>
       <motion.div
         initial={{ opacity: 0, y: 10 }}
@@ -22,7 +25,7 @@ export const Greeting = () => {
         transition={{ delay: 0.6 }}
         className="text-2xl text-zinc-500"
       >
-        Como posso te ajudar hoje?
+        {t('greeting.help')}
       </motion.div>
     </div>
   );

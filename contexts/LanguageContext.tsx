@@ -27,6 +27,10 @@ const translations = {
     'common.close': 'Fechar',
     'common.ok': 'OK',
     
+    // Greeting
+    'greeting.hello': 'Olá!',
+    'greeting.help': 'Como posso te ajudar hoje?',
+    
     // Navigation
     'nav.new_chat': 'Nova Conversa',
     'nav.history': 'Histórico',
@@ -100,6 +104,10 @@ const translations = {
     'common.send': 'Send',
     'common.close': 'Close',
     'common.ok': 'OK',
+    
+    // Greeting
+    'greeting.hello': 'Hello!',
+    'greeting.help': 'How can I help you today?',
     
     // Navigation
     'nav.new_chat': 'New Chat',
